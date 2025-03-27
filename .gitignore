@@ -1,0 +1,12 @@
+# Node modules
+node_modules/
+
+# Environment files
+.env
+
+# IDEs and editors
+.vscode/
+.idea/
+
+# Credentials
+service-account.json

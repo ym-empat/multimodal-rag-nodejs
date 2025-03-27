@@ -1,0 +1,35 @@
+{
+  "name": "multimodal-rag-nodejs",
+  "version": "1.0.0",
+  "description": "A project demonstrating how to build a multimodal Retrieval-Augmented Generation (RAG) system using Node.js, Vertex AI, Pinecone, and OpenAI.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ym-empat/multimodal-rag-nodejs.git"
+  },
+  "keywords": [
+    "RAG",
+    "OpenAI",
+    "Node.js",
+    "Vertex",
+    "AI",
+    "Pinecone",
+    "Multimodal"
+  ],
+  "author": "Yaroslav Melnychenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ym-empat/multimodal-rag-nodejs/issues"
+  },
+  "homepage": "https://github.com/ym-empat/multimodal-rag-nodejs#readme",
+  "dependencies": {
+    "@pinecone-database/pinecone": "^5.1.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "google-auth-library": "^10.0.0-rc.1",
+    "multer": "^1.4.5-lts.2"
+  }
+}
