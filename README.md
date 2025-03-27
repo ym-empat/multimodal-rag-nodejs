@@ -6,8 +6,6 @@ This project demonstrates how to build a backend for a **Multimodal Retrieval-Au
 - **Google Vertex AI** for generating text, image, and video embeddings
 - **Pinecone** for storing and querying vector representations
 
----
-
 ## 📦 Features
 
 - Upload and vectorize content via `/upload`:
@@ -16,8 +14,6 @@ This project demonstrates how to build a backend for a **Multimodal Retrieval-Au
 - Store vectors with metadata in Pinecone
 - Search via `/search` endpoint using a natural language query
   - Returns top 3 most relevant items with metadata
-
----
 
 ## 🚀 Getting Started
 
@@ -48,8 +44,6 @@ PINECONE_INDEX_NAME=example_index
 node app.js
 ```
 
----
-
 ## 🧪 API Endpoints
 
 ### `POST /upload`
@@ -61,8 +55,6 @@ Upload content to be vectorized and stored in Pinecone.
   - If it's **text** → processed as text
   - If it's an **image** → embedded using Vertex AI
   - If it's a **video** → embedded using Vertex AI
-
----
 
 ### `POST /search`
 
@@ -77,8 +69,6 @@ Query Pinecone using a natural language string.
 
 Returns metadata for the top 3 most similar results.
 
----
-
 ## 📁 Project Structure
 
 ```
@@ -90,27 +80,19 @@ Returns metadata for the top 3 most similar results.
 └── README.md
 ```
 
----
-
 ## 🧠 Technologies Used
 
 - **Node.js + Express**
 - **Google Vertex AI**
 - **Pinecone Vector DB**
 
----
-
 ## 📌 Coming Soon
 
 - Conversational RAG using **LangChain** + **OpenAI**
 
----
-
 ## 📄 License
 
 MIT — feel free to use and adapt.
-
----
 
 ## 🤝 Contributing
 
