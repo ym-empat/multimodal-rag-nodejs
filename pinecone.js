@@ -12,13 +12,18 @@ const indexName = process.env.PINECONE_INDEX_NAME;
 
 const index = pinecone.index(indexName);
 
-async function upsertToIndex({ vectors, type, filename }) {
+async function upsertToIndex({ vectors, type, filename, content }) {
     const pineconeVectors = vectors.map((v, i) => {
         const id = `${Date.now()}_${i}`;
         const metadata = {
             type,
-            filename,
         };
+
+        // Add filename to metadata if present
+        if (filename) metadata.filename = filename;
+
+        // Add content to metadata if present
+        if (content) metadata.content = content;
     
         // Add video segment metadata if present
         if (v.startOffsetSec !== undefined) metadata.startOffsetSec = v.startOffsetSec;

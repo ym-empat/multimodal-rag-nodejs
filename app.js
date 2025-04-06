@@ -55,7 +55,7 @@ app.post('/upload', upload.single('content'), async (req, res) => {
             
             console.log('text');
             const vector = await embedText(text);
-            await upsertToIndex({ vectors: [vector], type: 'text', filename: 'text_input' });
+            await upsertToIndex({ vectors: [vector], type: 'text', content: text });
        
         }
 
