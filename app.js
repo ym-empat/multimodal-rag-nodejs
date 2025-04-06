@@ -1,9 +1,12 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const multer = require('multer');
+const fs = require('fs');
+const path = require('path');
 
 const { embedText, embedImage, embedVideo } = require('./vertex');
 const { upsertToIndex, search } = require('./pinecone');
+const { generateTimestampFilename } = require('./utils/generateFilename');
 
 // Load environment variables
 dotenv.config();
@@ -24,11 +27,14 @@ app.get('/', (req, res) => {
 app.post('/upload', upload.single('content'), async (req, res) => {
     const file = req.file;
     const text = req.body.content;
-    const filename = file?.originalname || 'text_input';
 
     try {
         if(file) {
             const mime = file.mimetype;
+            const filename = generateTimestampFilename(file.originalname);
+            const storagePath = path.join(__dirname, 'uploads', filename);
+
+            fs.writeFileSync(storagePath, file.buffer);
 
             if (mime.startsWith('image/')) {
                 

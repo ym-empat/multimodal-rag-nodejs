@@ -14,7 +14,7 @@ const index = pinecone.index(indexName);
 
 async function upsertToIndex({ vectors, type, filename }) {
     const pineconeVectors = vectors.map((v, i) => {
-        const id = `${filename.replace(/\W/g, '_')}_${Date.now()}_${i}`;
+        const id = `${Date.now()}_${i}`;
         const metadata = {
             type,
             filename,
@@ -43,7 +43,13 @@ async function search(vector, topK) {
         includeMetadata: true,
     });
 
-    return response.matches.map(match => match.metadata);
+    const results = response.matches.map((match) => ({
+        id: match.id,
+        score: match.score,
+        metadata: match.metadata,
+    }));
+
+    return results;
 }
 
 module.exports = {
