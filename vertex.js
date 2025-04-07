@@ -59,7 +59,7 @@ async function embedImage(image) {
     return res.data.predictions[0].imageEmbedding;
 }
 
-async function embedVideo(video) {
+async function embedVideo(video, intervalSec = 15) {
     [client, url] = await getClient();
 
     const res = await client.request({
@@ -71,7 +71,7 @@ async function embedVideo(video) {
                     video: {
                         bytesBase64Encoded: video.buffer.toString('base64'),
                         videoSegmentConfig: {
-                            intervalSec: 15
+                            intervalSec
                         }
                     }
                 }

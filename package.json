@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/ym-empat/multimodal-rag-nodejs#readme",
   "dependencies": {
+    "@google-cloud/vertexai": "^1.9.3",
     "@pinecone-database/pinecone": "^5.1.1",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
