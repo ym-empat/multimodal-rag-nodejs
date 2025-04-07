@@ -88,7 +88,7 @@ Returns metadata for the top 3 most similar results.
 
 ## 📌 Coming Soon
 
-- Conversational RAG using **LangChain** + **OpenAI**
+- Conversational RAG using **Gemini**
 
 ## 📄 License
 
